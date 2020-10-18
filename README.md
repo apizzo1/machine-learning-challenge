@@ -8,8 +8,8 @@ Details about the data can be found here: [Kepler Exoplanent Information](https:
 
 ### Libraries used
 
-[sklearn](https://scikit-learn.org/stable/)
-[TensorFlow](https://www.tensorflow.org/guide/keras/sequential_model)
+* [sklearn](https://scikit-learn.org/stable/)
+* [TensorFlow](https://www.tensorflow.org/guide/keras/sequential_model)
 
 ### Cleaning and Preprocessing the Data
 
