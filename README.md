@@ -17,7 +17,7 @@ To prepare the data to be used in the models, multiple steps were taken. First, 
 
 Next, the data was preprocessed in the following ways: First, the X data was scaled using sklearn's MinMaxScaler, which scales the numerical data to a specific range. This is done on both the X_train and X_test data, which is the numerical data in this challenge.
 
-For the neural network and deep learning model, one additional step was taken: the y data was transformed into a binary type of output. In this case, \[1 0 0] would represent CANDIDATE, \[0 1 0] would represent CONFIRMED, and \[0 0 1] would represent FALSE POSITIVE.
+For the neural network and deep learning model, one additional step was taken: the y data was transformed into a binary type of output. In this case, \[1, 0, 0] would represent CANDIDATE, \[0, 1, 0] would represent CONFIRMED, and \[0, 0, 1] would represent FALSE POSITIVE.
 
 ### Comparison of Models
 
