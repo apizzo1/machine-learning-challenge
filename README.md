@@ -19,7 +19,7 @@ Next, the data was preprocessed in the following ways: First, the X data was sca
 
 For the neural network and deep learning model, one additional step was taken: the y data was transformed into a binary type of output. In this case, \[1 0 0] would represent CANDIDATE, \[0 1 0] would represent CONFIRMED, and \[0 0 1] would represent FALSE POSITIVE.
 
-### About the Models
+### Comparison of Models
 
 Once the data cleaning and preprocessing was completed, different models were created and trained with the x and y training data. Then hyperparameter tuning was employed using GridSearchCV, to see if the models could be improved. For the GridSearchCV tuning, parameters C and gamma were varied to find the best combination that could be used to get the best scored on the test data.
 
@@ -32,5 +32,16 @@ The other models that were tested included a neural network model and deep learn
 
 * Neural Network model - this model was a Sequential model using dense layers. The number of input parameters was 39 (the X data contains 39 columns of numerical information). The number of units was varied to see how the model accuracy would change. Changing from 75 to 100 to 200 did not have any significant impact on the accuracy or loss of this model. The accuracy for the training and test data was approximately 89% and the loss remained at about 25%. Increasing the epochs from 100 to 150 or 200 did increase the training and testing accuracy slightly, but did not have much of an impact on the test loss, and therefore may not be very beneficial.
 * Deep learning model - the only difference between the neural network and this model is that an additional hidden layer was added. In this instance, if the number of epochs was increased (for example for 100 to 150), the training accuracy and loss improved, but the testing loss increased noticeably, indicating that the model was overfit and would not be efficient when using new data.
-    
+
+### Model Discussion
+
+Overall, the models compared in this study had very similar accuracy when using them on the test data. Each module was approximately 90% accurate. One important note is that each module had very high precision when trying to identify the FALSE POSITIVEs, and then noticeably lower precision when trying to identify CANDIDATEs and CONFIRMEDs. This is likely attributed to the fact that the FALSE POSITIVE category had many more samples (853) vs the other two categories (CANDIDATES: 411 and CONFIRMED: 484). This allowed the models much more data to train on when it comes to FALSE POSITIVEs, and therefore increase their precision in this category. 
+
+The best 2 models appeared to be the deep learning model and the RBF SVC model (but these were only slightly better than the other models created). When looking at the classification reports between these 2 models, it can be seen that the deep learning model had a higher precision on CANDIDATE classifications than the RBF model, but with the downside that the CONFIRMED precision was decreased compared to the RBF model. Overall the RBF model was chosen because the F1 scores (the weighted average of the precision and recall) were slightly higher across the board than the deep learning model, and the overall weighted averages were slightly higher as well.
+
+To improve this model, more CONFIRMED and CANDIDATE data is needed to train the model. With more data, the precision in these categories can be increased, which will make the model much more accurate.
+
+### Files Included
+
+* Resources folder - contains csv file used for training and testing the models 
    
