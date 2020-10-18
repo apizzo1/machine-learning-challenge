@@ -44,4 +44,5 @@ To improve this model, more CONFIRMED and CANDIDATE data is needed to train the 
 ### Files Included
 
 * Resources folder - contains csv file used for training and testing the models 
+* Models folder - contains all model jupyter notebook files, as well as RBF model .sav file
    
